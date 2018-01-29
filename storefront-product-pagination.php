@@ -249,7 +249,7 @@ final class Storefront_Product_Pagination {
 		 * Add a new section
 		 */
 		$wp_customize->add_section( 'spp_section' , array(
-			'title'      	=> __( 'Product Pagination', 'storefront-extention-boilerplate' ),
+			'title'      	=> __( 'Product Pagination', 'storefront-product-pagination' ),
 			'priority'   	=> 55,
 		) );
 
@@ -367,7 +367,7 @@ final class Storefront_Product_Pagination {
 
 			echo '<nav class="storefront-single-product-pagination">';
 
-			echo '<h2>' . esc_attr( __( 'More products', 'storefront' ) ) . '</h2>';
+			echo '<h2>' . esc_attr( __( 'More products', 'storefront-product-pagination' ) ) . '</h2>';
 
 			if ( $previous_product && $previous_product_data->is_visible() ) {
 				previous_post_link( '%link', $previous_product_thumbnail . '<span class="title">%title</span>', $in_same_term, '', $taxonomy );
