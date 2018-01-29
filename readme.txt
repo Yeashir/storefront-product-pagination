@@ -1,9 +1,9 @@
 === Storefront Product Pagination ===
-Contributors: jameskoster, woothemes
+Contributors: jameskoster, tiagonoronha, automattic
 Tags: woocommerce, ecommerce, products, storefront, pagination, next, previous
 Requires at least: 4.0.0
-Tested up to: 4.8.2
-Stable tag: 1.2.2
+Tested up to: 4.9.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,10 @@ The links will appear on any single product page, providing there is more than o
 1. The product pagination.
 
 == Changelog ==
+
+
+= 1.2.3 - 01.29.2018 =
+* Fix - Replaced wrong text domains. Correct text domain is `storefront-product-pagination`.
 
 = 1.2.2 - 10.27.2017 =
 * Fix - Odd content scrolling behaviour when clicking inline reviews link.
