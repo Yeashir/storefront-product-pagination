@@ -192,6 +192,7 @@ final class Storefront_Product_Pagination {
 		$theme = wp_get_theme();
 
 		if ( 'Storefront' === $theme->name || 'storefront' === $theme->template && apply_filters( 'storefront_product_pagination_supported', true ) ) {
+			add_filter( 'body_class', array( $this, 'body_classes' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'spp_styles' ), 999 );
 			add_action( 'customize_register', array( $this, 'spp_customize_register' ) );
 			add_action( 'customize_preview_init', array( $this, 'spp_customize_preview_js' ) );
@@ -204,6 +205,23 @@ final class Storefront_Product_Pagination {
 		} else {
 			add_action( 'admin_notices', array( $this, 'spp_install_storefront_notice' ) );
 		}
+	}
+
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @since  1.2.4
+	 * @param  array $classes Classes for the body element.
+	 * @return array
+	 */
+	public function body_classes( $classes ) {
+		global $storefront_version;
+
+		if ( version_compare( $storefront_version, '2.3.0', '>=' ) ) {
+			$classes[] = 'storefront-2-3';
+		}
+
+		return $classes;
 	}
 
 	/**

@@ -1,7 +1,5 @@
-@import 'susy';
-@import 'bourbon';
-@import '../../../../themes/storefront/assets/sass/utils/variables';
-@import '../../../../themes/storefront/assets/sass/utils/mixins';
+@import '../../../../themes/storefront/assets/css/sass/utils/variables';
+@import '../../../../themes/storefront/assets/css/sass/vendors/font-awesome/variables';
 
 // Styles for mobile
 .storefront-single-product-pagination {
@@ -38,7 +36,7 @@
 			top: 50%;
 			z-index: 999999;
 			box-shadow: 0 0 1em rgba(0,0,0,.1);
-			@include transform(translateY(-50%));
+			transform: translateY(-50%);
 			line-height: 1.2;
 			overflow: hidden;
 
@@ -54,7 +52,7 @@
 			&[rel="prev"] {
 				left: -455px;
 				border-left: 0;
-				@include transition(left .3s ease-out);
+				transition: left .3s ease-out;
 
 				img {
 					float: right;
@@ -70,7 +68,7 @@
 					left: 1em;
 					height: 1em;
 					width: 1em;
-					@include transform(translateY(-50%));
+					transform: translateY(-50%);
 					line-height: 1;
 					text-align: center;
 				}
@@ -84,14 +82,14 @@
 					position: absolute;
 					right: 110px;
 					top: 50%;
-					@include transform(translateY(-50%));
+					transform: translateY(-50%);
 				}
 			}
 
 			&[rel="next"] {
 				right: -455px;
 				border-right: 0;
-				@include transition(right .3s ease-in);
+				transition: right .3s ease-in;
 
 				img {
 					float: left;
@@ -111,7 +109,7 @@
 					right: 1em;
 					height: 1em;
 					width: 1em;
-					@include transform(translateY(-50%));
+					transform: translateY(-50%);
 					line-height: 1;
 					text-align: center;
 				}
@@ -121,8 +119,30 @@
 					position: absolute;
 					left: 110px;
 					top: 50%;
-					@include transform(translateY(-50%));
+					transform: translateY(-50%);
 					text-align: right;
+				}
+			}
+		}
+	}
+
+	.storefront-2-3 {
+		.storefront-single-product-pagination {
+			a {
+				&[rel="prev"] {
+					&:before {
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						content: fa-content( $fa-var-angle-left );
+					}
+				}
+
+				&[rel="next"] {
+					&:after {
+						font-family: "Font Awesome 5 Free";
+						font-weight: 900;
+						content: fa-content( $fa-var-angle-right );
+					}
 				}
 			}
 		}
