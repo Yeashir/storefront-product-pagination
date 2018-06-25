@@ -33,13 +33,18 @@ function storefront_product_pagination() {
 
 /**
  * Only load plugin if Storefront version is under 2.3.0.
+ *
+ * @since 1.2.4
+ * @return void
  */
-if ( class_exists( 'Storefront' ) ) {
+function storefront_product_pagination_init() {
 	global $storefront_version;
 
-	if ( version_compare( $storefront_version, '2.3.0', '<' ) ) {
+	if ( class_exists( 'Storefront' ) && version_compare( $storefront_version, '2.3.0', '<' ) ) {
 		require 'classes/class-storefront-product-pagination.php';
 
 		storefront_product_pagination();
 	}
-}
+} // end storefront_product_pagination_init()
+
+add_action( 'init', 'storefront_product_pagination_init' );
