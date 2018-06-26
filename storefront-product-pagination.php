@@ -22,16 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Returns the main instance of Storefront_Product_Pagination to prevent the need to use globals.
- *
- * @since  1.0.0
- * @return object Storefront_Product_Pagination
- */
-function storefront_product_pagination() {
-	return Storefront_Product_Pagination::instance();
-} // End storefront_product_pagination()
-
-/**
  * Only load plugin if Storefront version is under 2.3.0.
  *
  * @since 1.2.4
@@ -42,9 +32,10 @@ function storefront_product_pagination_init() {
 
 	if ( class_exists( 'Storefront' ) && version_compare( $storefront_version, '2.3.0', '<' ) ) {
 		require 'classes/class-storefront-product-pagination.php';
+		require 'functions/functions.php';
 
 		storefront_product_pagination();
 	}
 } // end storefront_product_pagination_init()
 
-add_action( 'init', 'storefront_product_pagination_init' );
+add_action( 'after_setup_theme', 'storefront_product_pagination_init' );

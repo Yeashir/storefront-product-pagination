@@ -90,7 +90,7 @@ final class Storefront_Product_Pagination {
 	 * @return  void
 	 */
 	public function spp_load_plugin_textdomain() {
-		load_plugin_textdomain( 'storefront-product-pagination', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'storefront-product-pagination', false, dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/' );
 	}
 
 	/**
@@ -259,7 +259,7 @@ final class Storefront_Product_Pagination {
 	 * @return  void
 	 */
 	public function spp_styles() {
-		wp_enqueue_style( 'spp-styles', plugins_url( '/assets/css/style.css', __FILE__ ) );
+		wp_enqueue_style( 'spp-styles', plugins_url( '../assets/css/style.css', __FILE__ ) );
 
 		$heading_background_color = get_theme_mod( 'spp_background_color', apply_filters( 'spp_default_background_color', '#ffffff' ) );
 
@@ -277,7 +277,7 @@ final class Storefront_Product_Pagination {
 	 * @since  1.0.0
 	 */
 	public function spp_customize_preview_js() {
-		wp_enqueue_script( 'spp-customizer', plugins_url( '/assets/js/customizer.min.js', __FILE__ ), array( 'customize-preview' ), '1.0.0', true );
+		wp_enqueue_script( 'spp-customizer', plugins_url( '../assets/js/customizer.min.js', __FILE__ ), array( 'customize-preview' ), '1.0.0', true );
 	}
 
 	/**
