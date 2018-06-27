@@ -1,9 +1,9 @@
 === Storefront Product Pagination ===
 Contributors: jameskoster, tiagonoronha, automattic
 Tags: woocommerce, ecommerce, products, storefront, pagination, next, previous
-Requires at least: 4.0.0
-Tested up to: 4.9.2
-Stable tag: 1.2.3
+Requires at least: 4.0
+Tested up to: 4.9
+Stable tag: 1.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,8 @@ The links will appear on any single product page, providing there is more than o
 
 == Changelog ==
 
+= 1.2.4 - 06.27.2018 =
+* Dev - Disable plugin if running Storefront 2.3+. This plugin is now included in Storefront core.
 
 = 1.2.3 - 01.29.2018 =
 * Fix - Replaced wrong text domains. Correct text domain is `storefront-product-pagination`.

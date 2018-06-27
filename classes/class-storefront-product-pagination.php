@@ -55,7 +55,7 @@ final class Storefront_Product_Pagination {
 		$this->token 			= 'storefront-product-pagination';
 		$this->plugin_url 		= plugin_dir_url( __FILE__ );
 		$this->plugin_path 		= plugin_dir_path( __FILE__ );
-		$this->version 			= '1.2.3';
+		$this->version 			= '1.2.4';
 
 		register_activation_hook( __FILE__, array( $this, 'install' ) );
 
